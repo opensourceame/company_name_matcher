@@ -1,4 +1,4 @@
-= Company Name Matcher
+# Company Name Matcher
 
 The purpose of this library is to compare company names with a confidence score on how well they match.
 
@@ -12,7 +12,7 @@ The algorithm works as follows:
 * deduct 20% for missing words (e.g. "John Doe" vs "John Doe Company")
 * deduct 30% for incorrect word order (e.g. "The Joe Bloggs Company" vs "The Company of Joe Bloggs")
 
-== Example
+## Example
 
 ```
 match = CompanyNameMatcher::Match.new('Jolly Green Giant Corp', 'The Jolly Green Giant Corporation')
@@ -20,6 +20,6 @@ match = CompanyNameMatcher::Match.new('Jolly Green Giant Corp', 'The Jolly Green
 puts match.score # 85 - as in an 85% confidence that this is the same Company
 ```
 
-== Known Issues
+## Known Issues
 
 There's a problem with the word order score, however it always returns a very low score for words in the wrong order which will probably suffice for most cases.
