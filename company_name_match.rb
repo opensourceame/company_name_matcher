@@ -32,7 +32,7 @@ module CompanyNameMatcher
 
     NAME_SUBSTITUTIONS  = {
         :and            => %w( and & +               ),
-        :private        => %w( private pvt (pvt) (p) ),
+        :private        => %w( private pvt           ),
         :limited        => %w( limited ltd           ),
         :company        => %w( company co            ),
         :international  => %w( intl international    ),
@@ -82,7 +82,7 @@ protected
 
     # strip punctuation and transliterate
     def format(name)
-      name.gsub(/[\.,]/, '').downcase
+      name.gsub(/[\.,\(\)]/, '').downcase
     end
 
     def self.score(first_name, second_name)
